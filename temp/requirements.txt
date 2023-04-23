@@ -1,0 +1,8 @@
+django==4.1.6
+pandas==1.5.3
+numpy==1.24.2
+scikit-learn==1.2.1
+python-dotenv==0.21.1
+python-secrets==22.6.1
+gunicorn==20.1.0
+whitenoise==6.4.0

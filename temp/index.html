@@ -1,0 +1,309 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS / JS Externos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+    <!-- CSS / JS Internos -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Título de la página -->
+    <title>Erick Hernández</title>
+</head>
+
+<body>  
+    <!-- Contenido de página -->  
+    <div class="container-fluid">
+        
+        <!-- Imagen del encabezado -->
+        <div class="row mb-1" >
+            <div class="col-md-12 my-3" >
+                <img src="{% static 'img/modern-art.png' %}" 
+                    style="width: 100%; height: 170px; object-fit: cover;" >
+            </div>
+        </div>
+
+        <!-- Título del encabezado-->
+        <div class="row">
+            <div class="col-12 my-4">
+                <h1 class="text-center">Erick Hernández</h1>
+            </div>
+        </div>        
+
+
+        <!-- Contenido -->
+        <div class="container">
+            <nav>
+                <!-- Títulos de tabs -->
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        <h4>HOME</h4>
+                    </button>
+                    <button class="nav-link" id="nav-portfolio-tab" data-bs-toggle="tab" data-bs-target="#nav-portfolio" type="button" role="tab" aria-controls="nav-portfolio" aria-selected="false">
+                        <h4>PORTAFOLIO</h4>
+                    </button>
+                    <button class="nav-link" id="nav-cv-tab" data-bs-toggle="tab" data-bs-target="#nav-cv" type="button" role="tab" aria-controls="nav-cv" aria-selected="false">
+                        <h4>CV</h4>
+                    </button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                        <h4>CONTACTO</h4>
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content mt-5" id="nav-tabContent">
+
+                <!-- Contenido Tab HOME -->
+                <div class="tab-pane fade show active justified" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <h4>Biografía</h4>  
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, a quas eligendi animi sed dicta recusandae! Qui nobis nemo quidem, illum possimus optio, rerum hic eius repellendus asperiores, labore esse ducimus aut nulla libero obcaecati debitis distinctio. Voluptatibus fugit molestiae, repellendus adipisci impedit placeat quia officiis distinctio, optio, in ad odit enim quae maiores accusamus error hic dolorem veniam iure amet minus ipsum sequi! Libero, tempora magnam voluptatum quod at sunt eaque natus labore dolorem maxime facere veritatis consectetur delectus sequi nulla fuga praesentium ratione. Alias perspiciatis officiis optio repellendus ipsam eveniet praesentium at, excepturi eius iste doloribus dolores provident et perferendis soluta molestias non! Beatae tenetur nulla cum odit et sunt minima molestias eligendi nisi accusamus esse debitis quod, neque voluptatum! Minima odio, nisi nesciunt explicabo nemo magni ipsam molestiae iusto iste unde saepe odit facilis enim illo. Vel sed consequatur velit illum vero dolor esse voluptatum accusantium est.</p>
+                    <br>
+                    <h4>Áreas de interés</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, a quas eligendi animi sed dicta recusandae! Qui nobis nemo quidem, illum possimus optio, rerum hic eius repellendus asperiores, labore esse ducimus aut nulla libero obcaecati debitis distinctio. Voluptatibus fugit molestiae, repellendus adipisci impedit placeat quia officiis distinctio</p>
+                    
+                    <div class="">
+                        <ul class="mb-0">
+                            <li class="text-italic">Área de interés 1</li>
+                            <li class="text-italic">Área de interés 2</li>
+                            <li class="text-italic">Área de interés 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contenido Tab PORTAFOLIO -->
+                <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">
+                    <section class="">
+                        <div class="container">
+                            <div class="row">
+                                <!-- PROYECTO 1 -->
+                                <div class="col-lg-4 mt-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+                                        <img src="{% static 'img/iris.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">PROYECTO IRIS</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Modelo Clasificador de Flores Iris</h6>
+                                            <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque aut dignissimos.</p>
+                                            <a href="{% url 'iris' %}" class="card-link"><button class="btn btn-info w-100">Ir al proyecto</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- PROYECTO 2 -->
+                                <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+                                        <img src="{% static 'img/house.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">PROYECTO PRECIO DE CASAS</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Modelo para estimar el precio de casas</h6>
+                                            <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque aut dignissimos.</p>
+                                            <a href="#" class="card-link">
+                                                <button class="btn btn-info w-100" onclick="sweetAlertMessage('Todavía no implementas este proyecto', 'Sigue las instrucciones del curso', 'info')">Ir al proyecto</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- PROYECTO 3 -->
+                                <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+                                        <img src="{% static 'img/diabetes.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">PROYECTO DIABETES</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Modelo para estimar diabetes</h6>
+                                            <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque aut dignissimos.</p>
+                                            <a href="#" class="card-link">
+                                                <button class="btn btn-info w-100" onclick="sweetAlertMessage('Todavía no implementas este proyecto', 'Sigue las instrucciones del curso', 'info')">Ir al proyecto</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Contenido Tab CV -->
+                <div class="tab-pane fade" id="nav-cv" role="tabpanel" aria-labelledby="nav-cv-tab">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        
+                        <!-- Sección PERFIL -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                PERFIL
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.  
+                                    Officiis, a quas eligendi animi sed dicta recusandae! Qui nobis nemo quidem, illum possimus optio, rerum hic eius repellendus asperiores, labore esse ducimus aut nulla libero obcaecati debitis distinctio. Voluptatibus fugit molestiae, repellendus adipisci impedit placeat quia officiis distinctio, optio, in ad odit enim quae maiores accusamus error hic dolorem veniam iure amet minus ipsum sequi! Libero, tempora magnam voluptatum quod at sunt eaque natus labore dolorem maxime facere veritatis consectetur delectus sequi nulla fuga praesentium ratione. 
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección EDUCACIÓN -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                EDUCACIÓN
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>DOCTORADO EN PYTHON</strong></span> | UNIVERSIDAD DE LOS ANDES</p>
+                                            <P>ESPECIALIZACIÓN: LOREM IPSUM. </P>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dicta dolores dolor fugit a minima cumque quia eveniet nostrum qui labore, minus provident accusantium consequuntur obcaecati id aliquid at sit beatae iusto magnam nihil!</p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>MAESTRÍA EN CIENCIAS EN PYTHON</strong></span> | UNIVERSIDAD DE CHILE</p>
+                                            <P>ESPECIALIZACIÓN: LOREM IPSUM. </P>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dicta dolores dolor fugit a minima cumque quia eveniet nostrum qui labore, minus provident accusantium consequuntur obcaecati id aliquid at sit beatae iusto magnam nihil!</p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>LICENCIATURA EN PYTHON</strong></span> | UNIVERSIDAD AUTÓNOMA DE NUEVO LEÓN</p>
+                                            <P>ESPECIALIZACIÓN: LOREM IPSUM. </P>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dicta dolores dolor fugit a minima cumque quia eveniet nostrum qui labore, minus provident accusantium consequuntur obcaecati id aliquid at sit beatae iusto magnam nihil!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección EXPERIENCIA LABORAL  -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                EXPERIENCIA LABORAL
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>CIENTÍFICO DE DATOS</strong></span> | EMPRESA X</p>
+                                            <P>Departamento: Lorem ipsum. </P>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolore voluptatum maiores doloribus neque repellendus quas consequuntur magni, labore voluptates tempora placeat praesentium fugit non sunt excepturi enim.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Actividad 1</li>
+                                                    <li class="text-italic">Actividad 2</li>
+                                                    <li class="text-italic">Actividad 3</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>ANALISTA DE DATOS</strong></span> | EMPRESA X</p>
+                                            <P>Departamento: Lorem ipsum. </P>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolore voluptatum maiores doloribus neque repellendus quas consequuntur magni, labore voluptates tempora placeat praesentium fugit non sunt excepturi enim.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Actividad 1</li>
+                                                    <li class="text-italic">Actividad 2</li>
+                                                    <li class="text-italic">Actividad 3</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            20XX-20XX
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>ANALISTA DE DATOS JR.</strong></span> | EMPRESA X</p>
+                                            <P>Departamento: Lorem ipsum. </P>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolore voluptatum maiores doloribus neque repellendus quas consequuntur magni, labore voluptates tempora placeat praesentium fugit non sunt excepturi enim.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Actividad 1</li>
+                                                    <li class="text-italic">Actividad 2</li>
+                                                    <li class="text-italic">Actividad 3</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Contenido Tab CONTACT -->
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="col text-center">
+                        <h4>
+                            E-mail
+                        </h4>
+                        <p><a class="text-info" style="font-size: 1.3rem;" href="mailto:correo@miempresa.com">correo@miempresa.com</a></p>
+                        <br>
+                        <h4>
+                            WhatsApp
+                        </h4>
+                        <p>
+                            <a class="text-info" style="font-size: 1.3rem;" target="_blank" href="https://wa.me/528888888888/">
+                                MX +52 (88) 8888 8888 
+                                <span class="icon-stack text-info">
+                                    <i class="bi-whatsapp"></i>
+                                </span>
+                            </a> 
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+    
+<script>
+    function sweetAlertMessage(title, text, icon){
+        Swal.fire({
+            title: title,
+            text: text,
+            icon: icon,
+            confirmButtonColor: '#0dcaf0',
+    })
+}
+</script>
+
+</html>
