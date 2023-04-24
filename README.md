@@ -362,3 +362,49 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <--- Aquí
 ```python
 CSRF_TRUSTED_ORIGINS = ['https://...']  # Aquí agregas el dominio de Railway, ejemplo: https://mywebsite-production-a8ce.up.railway.app/
 ```
+
+# 🏡 [OPCIONAL] Crear vista CASAS 
+
+1.- Copiar `iris.html` y reemplazar el formulario para contar con los campos ['OverallQual', 'GrLivArea', '1stFlrSF', 'FullBath', 'YearBuilt']
+
+```html
+
+<!-- Formulario -->
+<form method="post">
+    {% csrf_token %}
+
+    <!-- Campo 1: Calidad general del 1 al 10 (OverallQual) -->
+    <div class="form-floating mb-3">
+        <input type="number" name="OverallQual" class="form-control" id="OverallQual" step="1" placeholder="1.0" value="">
+        <label for="OverallQual">Calidad general (1 al 10)</label>  
+    </div>
+
+    <!-- Campo 2: Superficie habitable (GrLivArea) -->
+    <div class="form-floating mb-3">
+        <input type="number" name="GrLivArea" class="form-control" id="GrLivArea" step="1" placeholder="1.0" value="">
+        <label for="GrLivArea">Superficie habitable</label> 
+    </div>
+
+    <!-- Campo 3: Área en pies cuadrados del 1er piso (1stFlrSF) -->
+    <div class="form-floating mb-3">
+        <input type="number" name="1stFlrSF" class="form-control" id="1stFlrSF" step="1" placeholder="1.0" value="">
+        <label for="1stFlrSF">Área 1er piso (pies^3)</label> 
+    </div>
+
+    <!-- Campo 5: Número de baños (FullBath) -->
+    <div class="form-floating mb-3">
+        <input type="number" name="FullBath" class="form-control" id="FullBath" step="1" placeholder="1.0" value="">
+        <label for="FullBath">Número de baños</label> 
+    </div>
+
+    <!-- Campo 5: Año de construcción (YearBuilt) -->
+    <div class="form-floating mb-3">
+        <input type="number" name="YearBuilt" class="form-control" id="YearBuilt" step="1" placeholder="1.0" value="">
+        <label for="YearBuilt">Año de construcción</label> 
+    </div>
+
+    <!-- Botón submit -->
+    <button type="submit" class="btn btn-info text-center w-100">Estimar</button>
+</form>
+
+```
