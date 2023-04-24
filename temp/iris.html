@@ -24,6 +24,7 @@
 
 <body>  
 <div class="container-fluid">
+    
     <!-- Imagen del encabezado -->
     <div class="row mb-1 " >
         <div class="col-1 my-3 d-flex align-items-center justify-content-center">
@@ -52,34 +53,53 @@
 
     <!-- Contenido -->
     <div class="container">
-      
+
+        <!-- Nueva fila -->
         <div class="row">
+
+            <!-- Columna vacía -->
             <div class="col-3"></div>
+
+            <!-- Columna izquierda -->
             <div class="col-3 mt-5">
                 <div class="row">
                     <br>
+                    <!-- Formulario -->
                     <form method="post">
                         {% csrf_token %}
+
+                        <!-- Campo 1: Largo del sépalo (slength) -->
                         <div class="form-floating mb-3">
                             <input type="number" name="slength" class="form-control" id="sepal-length" step=".1" placeholder="1.0" value="">
                             <label for="sepal-length">Ingresa largo del sépalo</label>  
                         </div>
+
+                        <!-- Campo 2: Ancho del sépalo (swidth) -->
                         <div class="form-floating mb-3">
                             <input type="number" name="swidth" class="form-control" id="sepal-width" step=".1" placeholder="1.0" value="">
                             <label for="sepal-width">Ingresa ancho del sépalo</label> 
                         </div>
+
+                        <!-- Campo 3: Largo del pétalo (plength) -->
                         <div class="form-floating mb-3">
                             <input type="number" name="plength" class="form-control" id="petal-length" step=".1" placeholder="1.0" value="">
                             <label for="petal-length">Ingresa largo del sépalo</label> 
                         </div>
+
+                        <!-- Campo 4: Ancho del pétalo (pwidth) -->
                         <div class="form-floating mb-3">
                             <input type="number" name="pwidth" class="form-control" id="petal-width" step=".1" placeholder="1.0" value="">
                             <label for="petal-width">Ingresa ancho del pétalo</label> 
                         </div>
+
+                        <!-- Botón submit -->
                         <button type="submit" class="btn btn-info text-center w-100">Estimar</button>
                     </form>
                 </div>
             </div>
+
+            <!-- Columna derecha -->
+            <!-- Imagen de flor -->
             <div class="col-4 d-flex align-items-center justify-content-center" >
                 {% if pred_image_name %}
                     <img src="{% static 'img/' %}{{ pred_image_name }}" class="cropcircle">
@@ -87,11 +107,15 @@
                     <img src="{% static 'img/iris-circular.png' %}" class="cropcircle">
                 {% endif %}
             </div>
+
+            <!-- Columna vacía -->
             <div class="col-2"></div>
         </div>
 
         <br>
 
+        <!-- Nueva fila -->
+        <!-- Etiqueta con la predicción (solo aparece si existe la etiqueta) -->
         {% if pred_label %}
         <div class="row text-center mt-5">
             <div class="col-3"></div>
@@ -103,6 +127,8 @@
             <div class="col-3"></div>
         </div>
         {% endif %}
+
+
     </div>
 </div>
 </body>

@@ -19,11 +19,16 @@ Adaptado de: https://github.com/lucrae/django-cheat-sheet/
 
 # 🐍 Inicializar un nuevo ambiente de trabajo
 Nota: Abrir terminal en VSC con CMD en lugar de PowerShell
+<s>
 - Navegar a la carpeta del proyecto `$ cd <folder>`
+</s>
 - Crear un nuevo ambiente de trabajo `$ python -m venv <venv-name>` (\<venv-name>=venv)
+<s>
 - Crear nuevo archivo ".env" `$ type NUL > .env` (Windows) `$ touch .env` (Linux)
-- Activar ambiente `$ .\<venv-name>\Scripts\activate`
-- Instalar librerías necesarias `$ pip install -r requirements.txt`
+</s>
+- Activar ambiente `$ .\<venv-name>\Scripts\activate` (Windows) `source <venv-name>/bin/activate` (Linux) 
+- Mover el archivo `requirements.txt` afuera de la carpeta `temp` 
+- Instalar librerías necesarias `$ pip install -r requirements.txt` 
 
 # 💼 Crear proyecto 
 - Crear proyecto `$ django-admin startproject <project-name>` (\<venv-name>=project)
@@ -140,8 +145,8 @@ urlpatterns = [
 # 🎨 Crear nueva plantilla (`Template`)
 - Crea carpeta `static/` dentro de la carpeta contenedora del proyecto `.`
 - Crear carpetas `css/`, `js/` e `img/` dentro de `static/`
-- Copiar archivos de imágenes `*.png` y `*.ico` en carpeta `static/images/`
-- Copiar modelo de aprendizaje automático `classification_svc_sklearn_1_2_1.pickle` en carpeta `static/`
+- Copiar archivos de imágenes `*.png` y `*.ico` en carpeta `static/img/`
+- Copiar archivos `*.pickle` (como los modelos de aprendizaje automático) en carpeta `static/`
 - Copiar archivos `*.css` en carpeta `css/`
 - Copiar archivos `*.js` en carpeta `js/`
 
@@ -176,7 +181,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static'] 
 ```
 
-- Mover archivos `index.html` e `iris.html` a `<projec>/<app-name>/templates/<app-name>` (crear carpetas)
+- Mover archivos `*.html` a `<projec>/<app-name>/templates/<app-name>` (crear carpetas)
 
 ```
 project/
@@ -219,9 +224,9 @@ import numpy as np
 
 
 # Cargar modelo guardado
-filename = 'static/classification_svc_sklearn_1_2_1.pickle'
+filename = 'static/classification_svc_sklearn_1_2_2.pickle'
 with open(filename, 'rb') as f:
-    loaded_model = pickle.load(f)
+    loaded_model_classification = pickle.load(f)
 
 
 # Vista Index
@@ -244,7 +249,7 @@ def iris(request):
 
         lista_iris = [slength, swidth, plength, pwidth]
         x_new = np.array([lista_iris])
-        y_pred = int(loaded_model.predict(x_new))
+        y_pred = int(loaded_model_classification.predict(x_new))
 
         dictionary = {0:('Iris Setosa', 'iris-setosa.png'), 
                       1:('Iris Versicolor', 'iris-versicolor.png'), 
@@ -293,3 +298,67 @@ CSRF_TRUSTED_ORIGINS = ['*']  # Aquí agregas el dominio ej.  ....preview.app.gi
 CSRF_TRUSTED_ORIGINS = ['https://...']  # Aquí agregas la dirección que te aparece a ti
 ```
 - Vuelve a correr el servidor `$ python manage.py runserver`
+
+
+# 🚀 [OPCIONAL] Distribución (deployment)
+
+- Asegurarse que las librerías de `gunicorn` y `whitenoise` estén presentes en el archivo de `requirements.txt`
+- Mover el archivo de `requirements.txt` a la carpeta del proyecto
+- Crear archivo `Procfile` (sin extensión) dentro de la carpeta del proyecto
+- Crear archivo `runtime.txt` dentro de la carpeta del proyecto
+
+```
+project/
+    portfolio_app/
+    project/
+    static/
+    ...
+    Procfile            <---- Crear
+    requirements.txt
+    runtime.txt         <---- Crear
+```
+
+- Agregar `web: gunicorn <project-name>.wsgi` al archivo `Procfile`:
+
+```
+web: gunicorn 'project.wsgi' 
+```
+
+- Agregar `Python -3.10.4` al archivo `runtime.txt`:
+
+```
+Python -3.10.4 
+```
+
+- Agregar middleware de librería `whitenoise` y definir `STATICFILES_STORAGE` en `<project-name>/settings.py` (después de `MIDDLEWARE`):
+
+```python
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # <---- Aquí
+    ...
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # <--- Aquí
+```
+
+- Definir `STATIC_ROOT` en `<project-name>/settings.py`:
+
+```python
+# Primero importar librería os al inicio del archivo settings.py
+import os                   # <---- Aquí
+from pathlib import Path
+```
+
+```python
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <--- Aquí
+```
+- Recolectar archivos estáticos en `STATIC_ROOT` con:
+- `$ python manage.py collectstatic`
+
+- - Modificar en `<project-name>/settings.py`: (primero se tiene que implementar en Railway para que te genere un dominio)
+
+```python
+CSRF_TRUSTED_ORIGINS = ['https://...']  # Aquí agregas el dominio de Railway, ejemplo: https://mywebsite-production-a8ce.up.railway.app/
+```

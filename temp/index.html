@@ -42,26 +42,37 @@
             </div>
         </div>        
 
-
         <!-- Contenido -->
         <div class="container">
+
+            <!-- Títulos de pestañas -->
             <nav>
-                <!-- Títulos de tabs -->
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+
+                    <!-- Título de pestaña 1: HOME -->
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                         <h4>HOME</h4>
                     </button>
+
+                    <!-- Título de pestaña 2: PORTAFOLIO -->
                     <button class="nav-link" id="nav-portfolio-tab" data-bs-toggle="tab" data-bs-target="#nav-portfolio" type="button" role="tab" aria-controls="nav-portfolio" aria-selected="false">
                         <h4>PORTAFOLIO</h4>
                     </button>
+
+                    <!-- Título de pestaña 3: CV -->
                     <button class="nav-link" id="nav-cv-tab" data-bs-toggle="tab" data-bs-target="#nav-cv" type="button" role="tab" aria-controls="nav-cv" aria-selected="false">
                         <h4>CV</h4>
                     </button>
+
+                    <!-- Título de pestaña 4: CONTACTO -->
                     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
                         <h4>CONTACTO</h4>
                     </button>
+
                 </div>
             </nav>
+
+            <!-- Contenido de las pestañas -->
             <div class="tab-content mt-5" id="nav-tabContent">
 
                 <!-- Contenido Tab HOME -->
@@ -84,12 +95,22 @@
                 <!-- Contenido Tab PORTAFOLIO -->
                 <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">
                     <section class="">
+
+                        <!-- Contenido PROYECTOS -->
                         <div class="container">
+
+                            <!-- Nueva fila -->
                             <div class="row">
+
+                                <!-- Columna izquierda -->
                                 <!-- PROYECTO 1 -->
                                 <div class="col-lg-4 mt-3 d-flex align-items-stretch">
                                     <div class="card h-100">
+
+                                        <!-- Imagen -->
                                         <img src="{% static 'img/iris.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">PROYECTO IRIS</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">Modelo Clasificador de Flores Iris</h6>
@@ -98,10 +119,16 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Columna central -->
                                 <!-- PROYECTO 2 -->
                                 <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
                                     <div class="card h-100">
+
+                                        <!-- Imagen -->
                                         <img src="{% static 'img/house.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">PROYECTO PRECIO DE CASAS</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">Modelo para estimar el precio de casas</h6>
@@ -112,10 +139,16 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Columna derecha -->
                                 <!-- PROYECTO 3 -->
                                 <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
                                     <div class="card h-100">
+
+                                        <!-- Imagen -->
                                         <img src="{% static 'img/diabetes.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">PROYECTO DIABETES</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">Modelo para estimar diabetes</h6>
@@ -137,11 +170,15 @@
                         
                         <!-- Sección PERFIL -->
                         <div class="accordion-item">
+                            
+                            <!-- Título -->
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                                 PERFIL
                                 </button>
                             </h2>
+
+                            <!-- Contenido -->
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.  
@@ -152,11 +189,15 @@
 
                         <!-- Sección EDUCACIÓN -->
                         <div class="accordion-item">
+
+                            <!-- Título -->
                             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                                 EDUCACIÓN
                                 </button>
                             </h2>
+
+                            <!-- Contenido -->
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body">
                                     <div class="row">
@@ -197,11 +238,15 @@
 
                         <!-- Sección EXPERIENCIA LABORAL  -->
                         <div class="accordion-item">
+
+                            <!-- Título -->
                             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
                                 EXPERIENCIA LABORAL
                                 </button>
                             </h2>
+
+                            <!-- Contenido -->
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                                 <div class="accordion-body">
                                     <div class="row">
