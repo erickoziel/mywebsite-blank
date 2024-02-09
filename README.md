@@ -21,13 +21,12 @@ Adaptado de: https://github.com/lucrae/django-cheat-sheet/
 
 # 🐍 Inicializar un nuevo ambiente de trabajo
 Nota: Abrir terminal en VSC con CMD en lugar de PowerShell
-<s>
-- Navegar a la carpeta del proyecto `$ cd <folder>`
-</s>
+
+**Nota 2: Al trabajar con Codespaces en Github estamos trabajando en una máquina con sistema operativo Linux**
+
+- <s> Navegar a la carpeta del proyecto `$ cd <folder>` </s>
 - Crear un nuevo ambiente de trabajo `$ python -m venv <venv-name>` (\<venv-name>=venv)
-<s>
-- Crear nuevo archivo ".env" `$ type NUL > .env` (Windows) `$ touch .env` (Linux)
-</s>
+- <s> Crear nuevo archivo ".env" `$ type NUL > .env` (Windows) `$ touch .env` (Linux) </s>
 - Activar ambiente `$ .\<venv-name>\Scripts\activate` (Windows) `source <venv-name>/bin/activate` (Linux) 
 - Mover el archivo `requirements.txt` afuera de la carpeta `temp` 
 - Instalar librerías necesarias `$ pip install -r requirements.txt` 
